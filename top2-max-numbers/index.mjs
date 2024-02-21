@@ -8,4 +8,11 @@
 // getTop2MaxNumbers([-10, -40, -20, -2, -9, -19]) === [-2, -9]
 // getTop2MaxNumbers([10, 40, 20, 2, 40, 9, 19]) === [40, 20]
 
-export const getTop2MaxNumbers = (numbers) => {};
+export const getTop2MaxNumbers = (numbers) => {
+  let cutDuplicateNumbers = [...new Set(numbers)];
+  cutDuplicateNumbers.sort((a, b) => b - a);
+  return cutDuplicateNumbers.slice(0, 2);
+};
+
+console.log(getTop2MaxNumbers([10, 40, 20, 2, 40, 9, 19]));
+console.log(getTop2MaxNumbers([-10, -40, -20, -2, -9, -19]));
